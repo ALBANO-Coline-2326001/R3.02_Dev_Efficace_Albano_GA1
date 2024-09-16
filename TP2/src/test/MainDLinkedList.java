@@ -10,24 +10,24 @@ public class MainDLinkedList {
 		System.out.println("Test du toString de Node");
 		System.out.println(test);
 
-		System.out.println("Ajout au début: test appendFirst + read");
+		System.out.println("Ajout : test appendFirst + read");
 		DLinkedList list = new DLinkedList();
-        list.appendFirt(10);
-        list.appendFirt(20);
-        list.appendFirt(30);
-        list.appendFirt(40);
+        list.appendFisrt(10);
+        list.appendFisrt(20);
+        list.appendFisrt(30);
+        list.appendFisrt(40);
         System.out.println("Liste après les ajouts : ");
         list.read();
 
-		System.out.println("Ajout à la fin : test appendLast + read");
-        list.appendFirt(10);
-        list.appendFirt(20);
-        list.appendFirt(30);
-        list.appendFirt(40);
-        System.out.println("Liste après les ajouts : ");
+		System.out.println("supprimer au début: test appendFirst + read");
+        list.removeFirst();
+        System.out.println("Liste après suppression : ");
         list.read();
 
-		
+		System.out.println("supprimer à la fin: test appendFirst + read");
+        list.removeLast();
+        System.out.println("Liste après suppression : ");
+        list.read();
 		
 	}
 }
