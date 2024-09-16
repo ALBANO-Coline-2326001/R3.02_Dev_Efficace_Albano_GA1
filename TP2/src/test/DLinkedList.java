@@ -48,20 +48,49 @@ public class DLinkedList {
         DNode first = header.getNext();
         header.setNext(first.getNext());
         first.getNext().setPrev(header);
-        size--;
     }
 
     public void removeLast() {
         DNode last = trailer.getPrev();
         trailer.setPrev(last.getPrev());
         last.getPrev().setNext(trailer);
-        size--;
     }
+
+    public void echange(DNode x, DNode y) {
+        if (x == null || y == null || x == y) {
+            return;
+        }
+
+        DNode xPrev = x.getPrev();
+        DNode xNext = x.getNext();
+        DNode yPrev = y.getPrev();
+        DNode yNext = y.getNext();
+
+            if (xPrev != null) xPrev.setNext(y);
+            if (xNext != null) xNext.setPrev(y);
+            if (yPrev != null) yPrev.setNext(x);
+            if (yNext != null) yNext.setPrev(x);
+
+            x.setPrev(yPrev);
+            x.setNext(yNext);
+            y.setPrev(xPrev);
+            y.setNext(xNext);
+        }
+
     
-    
-    
-    
-    
+    public void countNodes() {
+       int count = 1;
+       DNode current = head;
+       while (current.getNext() != head) {
+           count++;
+           current = current.getNext();
+           }
+       return count;
+    }
+
+
+    @Override
+        public boolean equals(Object obj) {
     
 
 }
